@@ -1,3 +1,13 @@
+import os
+
+# --- INICIO DE LA CONFIGURACIÓN DE RUTAS ---
+# Esto detecta la carpeta exacta donde está guardado este archivo de Python
+ruta_del_script = os.path.dirname(os.path.abspath(__file__))
+# Esto le dice a Python que use esa carpeta para guardar y leer todos los archivos .txt
+os.chdir(ruta_del_script)
+# --- FIN DE LA CONFIGURACIÓN ---
+
+
 def mostrar_menu():
     print("\n====================================")
     print("   VETERINARIA 'PATAS Y BIGOTES'")
@@ -160,4 +170,8 @@ def main():
 
         except ValueError:
             print("\nDebe ingresar un número.")
+            
+    # Esto pausa la pantalla negra al elegir salir, para que no se cierre de golpe
+    input("\nPresiona Enter para cerrar la ventana...")
+
 main()
